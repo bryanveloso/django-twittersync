@@ -1,0 +1,3 @@
+Initital data checkin, works for me :o)
+
+Requirements: django_extensions, python-dateutils, python-twitter
