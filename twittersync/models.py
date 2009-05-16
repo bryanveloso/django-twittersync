@@ -31,6 +31,9 @@ class Tweet(TimeStampedModel):
     def __unicode__(self):
         return "%s: %s" % (self.twitter_user.username, self.tweet)
 
+    def get_absolute_url(self):
+        return 'http://twitter.com/%s/status/%s' % (self.twitter_user.username, self.tweet_id)
+
     def save(self, *args, **kwargs):
         if not self.tweet_id and self.tweet:
             api = twitter.Api(username=self.twitter_user.username,
